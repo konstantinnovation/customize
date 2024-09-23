@@ -19,7 +19,9 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 ```
 After this change the font in your terminal to Meslo LGS NF
 
-# add your path
+# add ~/bin to your path
+
+Only do this if you installed oh-my-zsh, otherwise you can do this step manually
 ```
 sed -zi 's|# If you come from bash you might have to change your $PATH.|# If you come from bash you might have to change your $PATH.\nexport PATH=$HOME/bin:$PATH|g' ~/.zshrc
 ```
