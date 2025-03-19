@@ -13,15 +13,19 @@ curl -LO https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF
 curl -LO https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
 curl -LO https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 fc-cache -f -v
-echo "Remember: exit zsh after install if part of a larger script"
-wait 1
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" -y
 ```
-After this change the font in your terminal to Meslo LGS NF
+
+Restart your terminal emulator then change the font in your terminal to Meslo LGS NF
 
 # add ~/bin to your path
 
-Only do this if you installed oh-my-zsh, otherwise you can do this step manually
+In your bashrc, you can edit your PATH, or run this command:
+
+`export PATH=$HOME/bin:$PATH`
+
+If you installed oh-my-zsh, you can do the following instead:
+
 ```
 sed -zi 's|# If you come from bash you might have to change your $PATH.|# If you come from bash you might have to change your $PATH.\nexport PATH=$HOME/bin:$PATH|g' ~/.zshrc
 ```
@@ -37,7 +41,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ## NOTE: To selectively use keychain:
 
 (for networks with a mounted home directory that would cause an immediate ssh key password prompt)
-Disable the keychain plugin in .zshrc. Use an if statement and manually run it with:
+Disable the keychain plugin in .zshrc. Use an if statement and manually run it with a script like this:
 ```
 # Allows for re-use of ssh-agent and/or gpg-agent between logins
 /usr/bin/keychain --quiet $HOME/.ssh/id_ed25519
@@ -56,11 +60,5 @@ Inside of Kali WSL: `kex --win -s`
 
 On Window’s command prompt: `wsl -d kali-linux kex --win -s`
 
-# Fix python -> python3
 
-`sudo ln -s /usr/bin/python3 /usr/bin/python`
-
-# NodeJS
-
-`curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt-get install -y nodejs`
 
