@@ -6,7 +6,7 @@
 # General updates and coding font:
 ```
 sudo apt update -y && sudo apt upgrade -y
-sudo apt install curl fontconfig git zsh keychain gcc make open-jdk-21-jdk gnome-terminal
+sudo apt install curl fontconfig git zsh keychain gcc make open-jdk21-jdk gnome-terminal
 mkdir -p ~/.fonts && cd ~/.fonts || return
 curl -LO https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
 curl -LO https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
