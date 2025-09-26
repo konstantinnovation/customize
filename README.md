@@ -34,7 +34,7 @@ If you installed oh-my-zsh, you can do the following instead:
 sed -zi 's|# If you come from bash you might have to change your $PATH.|# If you come from bash you might have to change your $PATH.\nexport PATH=$HOME/bin:$PATH|g' ~/.zshrc
 ```
 
-# oh-my-zsh plugins
+# oh-my-zsh plugins and theme
 ```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/themes/powerlevel10k"
 sed -zi 's|ZSH_THEME="robbyrussell"|ZSH_THEME="powerlevel10k/powerlevel10k"|g' ~/.zshrc
@@ -42,17 +42,20 @@ sed -zi 's|plugins=(git)|plugins=(git zsh-autosuggestions zsh-syntax-highlightin
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
-## NOTE: To selectively use keychain:
 
+## NOTE: To selectively use keychain:
+You mayu want to Disable the keychain plugin in .zshrc. Use an if statement and manually run it with a script like this:
 (for networks with a mounted home directory that would cause an immediate ssh key password prompt)
-Disable the keychain plugin in .zshrc. Use an if statement and manually run it with a script like this:
+
 ```
 # Allows for re-use of ssh-agent and/or gpg-agent between logins
 /usr/bin/keychain --quiet $HOME/.ssh/id_ed25519
 source $HOME/.keychain/$HOST-sh
 ```
 
-# Kali full with desktop (for wsl):
+# For cybersecuritiy:
+
+## Kali full with desktop (for wsl):
 
 ```
 sudo apt-get install kali-linux-full
