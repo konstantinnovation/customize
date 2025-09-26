@@ -18,6 +18,10 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 Restart your terminal emulator then change the font in your terminal to Meslo LGS NF
 
+# change your shell to zsh using chsh
+
+Use `chsh` and select zsh. You may need to log out and in to your desktop environment for this to take effect.
+
 # add ~/bin to your path
 
 In your bashrc, you can edit your PATH, or run this command:
