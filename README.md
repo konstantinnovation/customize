@@ -43,16 +43,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-## NOTE: To selectively use keychain:
-You mayu want to Disable the keychain plugin in .zshrc. Use an if statement and manually run it with a script like this:
-(for networks with a mounted home directory that would cause an immediate ssh key password prompt)
-
-```
-# Allows for re-use of ssh-agent and/or gpg-agent between logins
-/usr/bin/keychain --quiet $HOME/.ssh/id_ed25519
-source $HOME/.keychain/$HOST-sh
-```
-
 # For cybersecuritiy:
 
 ## Kali full with desktop (for wsl):
